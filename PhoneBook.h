@@ -42,6 +42,7 @@ public:
     void printPhoneBook();
     void loadContacts();
     void saveContacts();
+    void Favorites();
     void updateSearchCount(std::string name);
     void ChangeFavorite(std::string name, int favorite);
     void Recent();
