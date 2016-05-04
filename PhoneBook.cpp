@@ -34,7 +34,7 @@ Contact* PhoneBook::SearchPhoneBook(string name)
             return current;
         }
     }
-
+    return NULL;
 
 }
 void PhoneBook::addContact(string name, string number, string email, int search, int favorite)
@@ -301,7 +301,7 @@ void PhoneBook::printPhoneBook()
 {
 
     if (root != NULL){
-		Favorites();
+		cout<<"-----Contacts-----"<<endl;
         printPhone(root);
     }
 }

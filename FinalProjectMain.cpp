@@ -11,7 +11,7 @@ int main()
 {
         PhoneBook *pNode = new PhoneBook;
         int input = 1;
-        while(input != 8 && input < 8 && input > 0){
+        while(input != 9 && input < 9 && input > 0){
         cout << "======Main Menu======" << endl;
         cout << "1. Add Contact" << endl;
         cout << "2. Delete Contact" << endl;
@@ -20,7 +20,8 @@ int main()
         cout << "5. Print Recent Contacts" << endl;
         cout << "6. Edit Contact" << endl;
         cout << "7. Add Favorite" << endl;
-        cout << "8. Quit" << endl;
+        cout << "8. Print Favorites" << endl;
+        cout << "9. Quit" << endl;
 
 
         cout << "Enter Choice:";
@@ -57,7 +58,17 @@ int main()
 
         if(input==4)
         {
-            pNode->printPhoneBook();
+            string person;
+            cin.ignore();
+            cout<<"Enter Name: ";
+            getline(cin,person);
+            cout<<endl;
+            Contact* waldo=pNode->SearchPhoneBook(person);
+            if(waldo!=NULL){
+                cout << waldo -> name << "," << waldo -> number << "," << waldo -> email << endl;
+            }else if(waldo==NULL){
+                cout<<person<<" is not in your contacts"<<endl;
+            }
         }
 
         if(input==5)
@@ -93,6 +104,11 @@ int main()
         }
 
         if(input==8)
+        {
+            pNode->Favorites();
+        }
+
+        if(input==9)
         {
             cout<<"Goodbye"<<endl;
         }
